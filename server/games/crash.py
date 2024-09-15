@@ -21,6 +21,7 @@ class CrashGame:
         self.bet = bet
         self.current_multiplier = None
         self.state = "waiting"
+        self.claimed = False
 
     async def crash_generator(self):
         self.state = "playing"

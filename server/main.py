@@ -29,9 +29,12 @@ async def crash_ws(websocket: WebSocket):
         game = CrashGame(**params.model_dump())
 
         async def stream_game():
+            sleep_interval = 0.1
             async for value in game.crash_generator():
                 await websocket.send_json({"type": "up", "value": value})
-                await asyncio.sleep(0.1)
+                if game.claimed:
+                    sleep_interval = max(0.0001, sleep_interval * 0.99)
+                await asyncio.sleep(sleep_interval)
             await websocket.send_json(
                 {"type": "crash", "value": game.current_multiplier}
             )
@@ -48,6 +51,7 @@ async def crash_ws(websocket: WebSocket):
                             "value": round(game.bet * game.current_multiplier, 2),
                         }
                     )
+                    game.claimed = True
                     return
 
         stream_game_task = asyncio.create_task(stream_game())

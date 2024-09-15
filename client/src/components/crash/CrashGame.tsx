@@ -103,8 +103,8 @@ const CrashGame: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <Header />
 
-        <div className="grid grid-cols-2 gap-4">
-          <Card className="bg-[#1A2C38] border-[#2A3C48]">
+        <div className="grid grid-cols-3 gap-4">
+          <Card className="bg-[#1A2C38] border-[#2A3C48] col-span-1">
             <CardContent className="p-4">
               <BetControls
                 bet={bet}
@@ -118,7 +118,7 @@ const CrashGame: React.FC = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-[#1A2C38] border-[#2A3C48]">
+          <Card className="bg-[#1A2C38] border-[#2A3C48] col-span-2">
             <CardContent className="p-4 h-full flex flex-col justify-center items-center">
               <GameStats
                 currentValue={currentValue}
