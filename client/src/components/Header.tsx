@@ -5,7 +5,7 @@ export function Header() {
     const [signedIn, setSignedIn] = useState(false);
 
     return (
-        <header className="bg-gray-800 p-4 flex items-center justify-between sticky top-0 z-10">
+        <header className="bg-[#1a2c38] p-4 flex items-center justify-between sticky top-0 z-10 h-16 shadow-lg">
             <h1 className="text-2xl font-bold">Ahh Casino</h1>
             <div className="flex-grow mx-4">
                 <div className="relative">

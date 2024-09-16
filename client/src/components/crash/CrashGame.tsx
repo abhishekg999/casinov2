@@ -99,8 +99,8 @@ const CrashGame: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0F1923] text-white p-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-[#0f212e] text-white p-6 rounded-xl">
+      <div className="max-w-6xl mx-auto rounded-lg">
         <Header />
 
         <div className="grid grid-cols-3 gap-4">

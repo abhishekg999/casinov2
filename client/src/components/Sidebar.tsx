@@ -3,15 +3,17 @@ import { Button } from '@/components/ui/button'
 
 export function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (isOpen: boolean) => void }) {
     return (
-        <aside className={`${isOpen ? 'w-64' : 'w-16'} bg-gray-800 overflow-y-auto flex flex-col`}>
-            <div className="p-4">
+        <aside className={`${isOpen ? 'w-64' : 'w-16'} bg-[#0f212e] overflow-y-auto flex flex-col`}>
+            <div className="p-3 pt-4 h-16 shadow-lg">
                 <Button
+                    variant="ghost"
                     onClick={() => setIsOpen(!isOpen)}
-                    className={`bg-green-500 p-2 text-white rounded`}
+                    className="p-2 text-gray-500 rounded hover:text-white"
                 >
                     <Menu className="h-6 w-6" />
                 </Button>
             </div>
+
             <nav className="mt-8 flex-grow flex flex-col gap-2 overflow-hidden">
                 <SidebarItem icon={<Star />} text="Favourites" isOpen={isOpen} />
                 <SidebarItem icon={<Clock />} text="Recent" isOpen={isOpen} />

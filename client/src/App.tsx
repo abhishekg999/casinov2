@@ -6,7 +6,7 @@ import CrashGame from "./components/crash/CrashGame";
 const App: React.FC = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     return (
-        <div className="flex h-screen bg-gray-900 text-white">
+        <div className="flex h-screen bg-[#1a2b37] text-white">
             <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
             <div className="flex flex-col flex-grow">
                 <Header />
