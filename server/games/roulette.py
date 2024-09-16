@@ -1,8 +1,7 @@
 import math
-from .utils import generate_floats, GlobalNonce
+from .utils import float_generator, byte_generator, GlobalNonce
 
 
 def generate_pocket(server_seed, client_seed) -> int:
-    return math.floor(
-        generate_floats(server_seed, client_seed, GlobalNonce.get(), 0, 37)
-    )
+    rng = byte_generator(server_seed, client_seed, GlobalNonce.get(), 0)
+    return math.floor(float_generator(rng, 37))

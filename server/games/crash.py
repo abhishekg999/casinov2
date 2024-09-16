@@ -8,12 +8,6 @@ def generate_multiplier(server_seed: str, client_seed: str) -> float:
     crashpoint = max(1, (2**32 / (int_value + 1)) * (1 - 0.01))
     return math.trunc(crashpoint * 100) / 100
 
-
-async def crash_generator(multiplier: float):
-    for i in range(100, int(multiplier * 100) + 1, 1):
-        yield i / 100
-
-
 class CrashGame:
     def __init__(self, bet: int, secret: str):
         self._multiplier = generate_multiplier(generate_server_secret(), secret)

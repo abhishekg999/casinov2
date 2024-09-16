@@ -112,7 +112,7 @@ const CrashGame: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-4">
-          <Card className="bg-[#1A2C38] border-[#2A3C48] col-span-1">
+          <Card className="bg-[#213743] border-[#2A3C48] col-span-1">
             <CardContent className="p-4">
               <BetControls
                 bet={bet}

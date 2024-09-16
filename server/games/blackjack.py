@@ -1,7 +1,7 @@
 from math import floor
 from typing import Generator
 from enum import Enum
-from .utils import generate_floats, GlobalNonce
+from .utils import float_generator, byte_generator, GlobalNonce
 
 
 class CardSuit(str, Enum):
@@ -38,5 +38,6 @@ Deck = Generator[str, None, None]
 
 
 def generate_deck(server_seed: str, client_seed: str) -> Deck:
-    for index in generate_floats(server_seed, client_seed, GlobalNonce.get(), 0, 52):
+    rng = byte_generator(server_seed, client_seed, GlobalNonce.get(), 0)
+    for index in float_generator(rng, 52):
         yield CARDS[floor(index * 52)]
