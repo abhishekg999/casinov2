@@ -1,17 +1,18 @@
-import { useState } from "react";
 import { Header } from "./components/Header";
 import { Sidebar } from "./components/Sidebar";
 import CrashGame from "./components/crash/CrashGame";
 
 const App: React.FC = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    
     return (
         <div className="flex h-screen bg-[#1a2b37] text-white">
-            <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+            <Sidebar  />
             <div className="flex flex-col flex-grow">
                 <Header />
                 <main className="flex-grow p-4 overflow-y-scroll">
-                    <CrashGame />
+                    <div className="max-w-[1280px] mx-auto p-8">
+                        <CrashGame />
+                    </div>
                 </main>
             </div>
         </div>

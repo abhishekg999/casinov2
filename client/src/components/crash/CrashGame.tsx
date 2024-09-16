@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
 import BetControls from './BetControls';
 import GameStats from './GameStats';
 import BalanceDisplay from './BalanceDisplay';
 import { Card, CardContent } from "@/components/ui/card";
+import { Settings, Maximize2, BarChart2 } from 'lucide-react';
+import { Button } from '../ui/button';
 
 
 
@@ -101,7 +102,14 @@ const CrashGame: React.FC = () => {
   return (
     <div className="bg-[#0f212e] text-white p-6 rounded-xl">
       <div className="max-w-6xl mx-auto rounded-lg">
-        <Header />
+        <div className="flex justify-between items-center mb-4">
+          <h1 className="text-2xl font-bold">Crash</h1>
+          <div className="flex space-x-2">
+            <Button variant="ghost"><Settings size={20} /></Button>
+            <Button variant="ghost"><Maximize2 size={20} /></Button>
+            <Button variant="ghost"><BarChart2 size={20} /></Button>
+          </div>
+        </div>
 
         <div className="grid grid-cols-3 gap-4">
           <Card className="bg-[#1A2C38] border-[#2A3C48] col-span-1">

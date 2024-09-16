@@ -1,7 +1,11 @@
 import { Menu, Star, Clock, Gift, Flame, Zap } from 'lucide-react'
+import { useState } from "react";
+
 import { Button } from '@/components/ui/button'
 
-export function Sidebar({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (isOpen: boolean) => void }) {
+export function Sidebar() {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <aside className={`${isOpen ? 'w-64' : 'w-16'} bg-[#0f212e] overflow-y-auto flex flex-col`}>
             <div className="p-3 pt-4 h-16 shadow-lg">
